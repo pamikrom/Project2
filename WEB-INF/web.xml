@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <listener>
+        <listener-class>InfoListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>Curr</servlet-name>
+        <servlet-class>Curr</servlet-class>
+        <init-param>
+            <param-name>Param</param-name>
+            <param-value>http://www.ecb.int/stats/eurofxref/eurofxref-daily.xml</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>ListenerServ</servlet-name>
+        <servlet-class>ListenerServ</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CodeZip</servlet-name>
+        <servlet-class>CodeZip</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Curr</servlet-name>
+        <url-pattern>/Curr</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CodeZip</servlet-name>
+        <url-pattern>/CodeZip</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListenerServ</servlet-name>
+        <url-pattern>/ListenerServ</url-pattern>
+    </servlet-mapping>
+    <context-param>
+        <param-name>urlvoulas</param-name>
+        <param-value>InfoReport.html</param-value>
+    </context-param>
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+</web-app>
